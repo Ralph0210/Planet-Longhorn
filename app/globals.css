@@ -9,6 +9,7 @@
   --secondary-color: #E5A980;
   --background-color: #FFFFFF;
   --underline-color: #000;
+  --unimportantText-color:rgba(0, 0, 0, 0.50);
 
   --Bebas-Neue: Bebas Neue;
 
@@ -20,6 +21,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --unimportantText-color:rgba(255, 255, 255, 0.50);
     --background-color: #1E1E1E;
     --underline-color: #fff;
     /* Update background color for dark theme */
