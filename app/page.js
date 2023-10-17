@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.css'
 import logo from '../public/logo.png'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-
+import PrivacyScreen from './components/PrivacyScreen'
 
 
 export default function Home() {
@@ -23,18 +23,26 @@ const router = useRouter();
     }
   }
 
+  const [showPrivacyScreen, setShowPrivacyScreen] = useState(false);
+
     // Add a useEffect to redirect after 5 seconds
     useEffect(() => {
-      const timer = setTimeout(() => {
-        router.push('/home'); // Redirect to /home
+
+      const timer1 = setTimeout(() => {
+        setShowPrivacyScreen(true);
       }, 5000);
+
+      const timer2 = setTimeout(() => {
+        router.push('/home');
+      }, 6000);
   
-      return () => clearTimeout(timer); // Clean up the timer on unmount
+      return () => clearTimeout(timer1, timer2); // Clean up the timer on unmount
     }, []);
 
 
   return (
-    <main className={styles.main}>
+    <AnimatePresence mode='wait'>
+        {showPrivacyScreen ? <PrivacyScreen /> :     <main className={styles.main}>
 <div className={styles.logoContainer}>
 <Image quality={100} src={logo} alt='logo' style={{
             width: "100%",
@@ -58,6 +66,9 @@ const router = useRouter();
     ))}
   </motion.span>
 </div>
-    </main>
+    </main>}
+
+    
+    </AnimatePresence>
   )
 }
