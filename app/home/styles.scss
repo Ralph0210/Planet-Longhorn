@@ -1,0 +1,54 @@
+$grey: #1f1f1f;
+
+main {
+  display: flex;
+//   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.slider-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: 25px 0;
+width: 63%;
+
+  .slider {
+    position: relative;
+    height: 75rem;
+    width: 63%;
+    overflow: hidden;   
+
+    @media only screen and (max-width: 375px) {
+      height: 400px;
+      width: 300px;
+    }
+
+    .image {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      will-change: transform, opacity;
+  
+      &:hover {
+        cursor: grab;
+      }
+  
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+}
+
+.hero_left_container{
+    width: 37%;
+    height: 75rem;
+    background-color: var(--primary-color);
+    position: relative;
+}
