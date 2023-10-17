@@ -9,8 +9,6 @@ import localFont from 'next/font/local'
 
 import { IMAGES } from "./Images"
 
-import "./styles.scss"
-
 
 
 const Didot = localFont({ src: './didotBold.otf' })
@@ -65,7 +63,7 @@ const Home = () => {
 
   return (
     <Layout>
-    <main>
+    <main className={styles.main}>
     <h1 className={`${styles.title} ${Didot.className}`}>Planet <br/>Longhorn</h1>
       <div className="slider-container">
         <div className="slider">
