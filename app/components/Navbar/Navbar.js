@@ -9,7 +9,7 @@ import styles from './Navbar.module.css'
 import { motion } from 'framer-motion'
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon'
 import localFont from 'next/font/local'
-import '../../globals.css'
+import Menu from '../Menu/Menu'
 
 const myFont = localFont({ src: './DidotRegular.ttf' })
 

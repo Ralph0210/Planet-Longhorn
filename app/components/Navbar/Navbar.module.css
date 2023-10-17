@@ -59,3 +59,16 @@ letter-spacing: -0.0176rem;
     padding: 0.5rem 2rem;
     border-radius: 1rem;
 }
+
+@media (max-width:768px) {
+  .mobileNav{
+    display: flex;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  .navbarContainer{
+  }
+}
