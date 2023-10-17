@@ -46,11 +46,11 @@ const Navbar = () => {
           </li>
           <li
             className={`${styles.li} ${
-              pathname == "/people" ? styles.peopleactive : ""
+              pathname == "/events" ? styles.peopleactive : ""
             }`}
-            onClick={() => setActive("people")}
+            onClick={() => setActive("events")}
           >
-            <Link href="/people" className={styles.link}>
+            <Link href="/events" className={styles.link}>
               Events
             </Link>
           </li>
@@ -66,11 +66,11 @@ const Navbar = () => {
           </li>
           <li
             className={`${styles.li} ${
-              pathname == "/events" ? styles.eventsactive : ""
+              pathname == "/team" ? styles.eventsactive : ""
             }`}
             onClick={() => setActive("events")}
           >
-            <Link href="/events" className={styles.link}>
+            <Link href="/team" className={styles.link}>
               Team
             </Link>
           </li>

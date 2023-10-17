@@ -25,6 +25,7 @@ letter-spacing: -0.0264rem;
 
   .primary{
     color: var(--primary-color);
+    width: max-content;
   }
 
 @media (max-width: 768px){

@@ -2,13 +2,15 @@
   
   .main {
     display: flex;
-    align-items: center;
+    align-items: start;
     width: 100%;
+    height: 75rem;
     position: relative;
   }
   
-  .slider-container {
+  .slider_container {
     width: 63%;
+    height: 75rem;
   }
   
   .slider {
@@ -17,10 +19,10 @@
     width: 63%;
     overflow: hidden;
   
-    @media only screen and (max-width: 375px) {
+    /* @media only screen and (max-width: 375px) {
       height: 400px;
       width: 300px;
-    }
+    } */
   
     .image {
       position: absolute;
@@ -42,7 +44,7 @@
   }
   
 
-.hero_left_container{
+.hero_right_container{
     width: 37%;
     height: 75rem;
     background-color: var(--primary-color);
@@ -77,3 +79,33 @@ top: 70%;
     left: 10%;
     transform: translate(-50%, -50%);
 }
+
+.social_links{
+  list-style-type: none;
+  display: flex;
+  gap: 4.8rem;
+  position: absolute;
+color: rgba(255, 255, 255, 0.80);
+    font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: 82.5%; /* 2.64rem */
+letter-spacing: 0.0448rem;
+top: 96%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imageText{
+  position: absolute;
+  color: rgba(255, 255, 255, 0.80);
+      font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 82.5%; /* 2.64rem */
+  letter-spacing: 0.0448rem;
+  top: 75%;
+      left:15%;
+      transform: translate(-50%, -50%);
+}
+
