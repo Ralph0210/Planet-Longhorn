@@ -1,0 +1,61 @@
+
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 9rem;
+    margin: 0 2.5rem;
+}
+
+.mobileNav{
+    display: none;
+}
+
+.logoContainer{
+    width: 6rem;
+}
+
+.ul {
+    display: flex;
+    list-style-type: none;
+    gap: 3rem;
+text-align: center;
+font-size: 1.6rem;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 2.4rem */
+letter-spacing: -0.0176rem;
+}
+
+.li {
+    position: relative;
+  }
+  
+  /* Add the underline styles */
+  .li::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px; /* Adjust the thickness of the underline as needed */
+    background-color: var(--underline-color);
+    transition: width 0.3s ease-in-out; /* Adjust the transition duration as needed */
+  }
+  
+  /* Style for active and hover states */
+  .li:hover::before,
+  .li.homeactive::before,
+  .li.peopleactive::before,
+  .li.iniactive::before,
+  .li.eventsactive::before {
+    width: 100%;
+  }
+
+  .joinLink{
+    /* color: var(--background-color); */
+    text-decoration: none;
+    border: 1px solid var(--underline-color);
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+}

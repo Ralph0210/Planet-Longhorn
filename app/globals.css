@@ -8,13 +8,24 @@
   --primary-color: #C15002;
   --secondary-color: #E5A980;
   --background-color: #FFFFFF;
+  --underline-color: #000;
 
   --Bebas-Neue: Bebas Neue;
+
+    /* Define text and background colors */
+    --foreground-rgb: 0, 0, 0; /* Default text color */
+    --background-start-rgb: 255, 255, 255; /* Default background color (start) */
+    --background-end-rgb: 255, 255, 255; /* Default background color (end) */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #1E1E1E;
+    --underline-color: #fff;
+    /* Update background color for dark theme */
+    --background-start-rgb: 30, 30, 30; /* Dark background color (start) */
+    --background-end-rgb: 30, 30, 30; /* Dark background color (end) */
+    --foreground-rgb: 255, 255, 255; /* Dark text color */
   }
 }
 
