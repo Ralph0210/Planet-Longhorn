@@ -13,12 +13,26 @@ import Image from "next/image";
 import time from "../../public/time.svg";
 import location from "../../public/location.svg";
 import food from "../../public/food.svg";
+import Himage1 from '../../public/hero_slider/1.JPG'
+import Himage2 from '../../public/hero_slider/2.JPG'
+import Himage3 from '../../public/hero_slider/3.JPG'
+import Himage4 from '../../public/hero_slider/4.JPG'
+import Himage5 from '../../public/hero_slider/5.JPEG'
+import Himage6 from '../../public/hero_slider/6.JPG'
+import Himage7 from '../../public/hero_slider/7.JPG'
+import Himage8 from '../../public/hero_slider/8.JPG'
+import Himage9 from '../../public/hero_slider/9.JPG'
+import Himage10 from '../../public/hero_slider/10.JPG'
+
+import Wimage1 from '../../public/whatWeDo/1.JPEG'
+import Wimage2 from '../../public/whatWeDo/2.JPG'
+import Wimage3 from '../../public/whatWeDo/3.jpg'
 
 import josephine from '../../public/team/josephine.jpg'
 import petar from '../../public/team/petar.jpg'
 import komie from '../../public/team/komie.jpg'
 
-import { IMAGES } from "./Images";
+// import { IMAGES } from "./Images";
 // import { MEMBERS } from "./member";
 
 const Didot = localFont({ src: "./didotBold.otf" });
@@ -72,11 +86,6 @@ const sliderTransition = {
   ease: [0.56, 0.03, 0.12, 1.04],
 };
 
-const sliderTransition2 = {
-  duration: 3,
-  ease: [0.56, 0.03, 0.12, 1.04],
-};
-
 const MEMBERS = [
   {
     id: 0,
@@ -84,7 +93,7 @@ const MEMBERS = [
       josephine,
       name: 'Josephine',
       
-      text: 'test',
+      text: 'I made some of my BEST FRIENDS in Planet Longhorn',
       bgcolor: '#FFC6C6',
       country: "Netherland"
   },
@@ -93,7 +102,7 @@ const MEMBERS = [
     imageSrc:
       petar,
       name: 'Petar',
-      text: 'test2',
+      text: 'Me too',
       bgcolor: '#D6CABD',
       country: "Macedonia",
   },
@@ -102,10 +111,61 @@ const MEMBERS = [
     imageSrc:
       komie,
       name: 'Komie',
-      text: 'test3',
+      text: '"I did not get arrested"',
       bgcolor: '#BECAED',
       country:"Houston"
   }
+]
+
+const IMAGES = [
+  {
+    id: 0,
+    imageSrc:
+      Himage1,
+      text: 'Austin bouldering project'
+  },
+  {
+    id: 1,
+    imageSrc:
+   Himage2,
+      text: 'Wurstfest'
+  },
+  {
+    id: 2,
+    imageSrc:
+     Himage3,
+      text: 'white lies party'
+  },
+  {
+    id: 3,
+    imageSrc:
+      Himage4,
+      text: 'boat party'
+  },
+  {
+    id: 4,
+    imageSrc:
+     Himage5,
+      text: 'sixth street'
+  }
+]
+
+const WHATWEDO = [
+  {
+    id: 0,
+    imageSrc:
+      Wimage1,
+  },
+  {
+    id: 1,
+    imageSrc:
+      Wimage2,
+  },
+  {
+    id: 2,
+    imageSrc:
+      Wimage3,
+  },
 ]
 
 const Home = () => {
@@ -171,7 +231,7 @@ const Home = () => {
               <motion.div
                 key={imageCount}
                 style={{
-                  backgroundImage: `url(${IMAGES[activeImageIndex].imageSrc})`,
+                  backgroundImage: IMAGES[activeImageIndex].imageSrc,
                 }}
                 custom={direction}
                 variants={sliderVariants}
@@ -184,7 +244,10 @@ const Home = () => {
                 dragElastic={1}
                 onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                 className={styles.image}
-              ></motion.div>
+              ><motion.div className={styles.heroImage}>
+                <Image src={IMAGES[activeImageIndex].imageSrc} sizes="100vh" style={{width:'auto', height:'100%', objectFit: 'cover'}}/>
+                </motion.div>
+              </motion.div>
             </AnimatePresence>
           </div>
         </div>
@@ -267,11 +330,11 @@ const Home = () => {
             <div className={styles.slider_about_us}>
               <AnimatePresence initial={false} custom={direction}>
                 <motion.div
-                  key={imageCount}
+                  key={imageCount2}
                   style={{
-                    backgroundImage: `url(${IMAGES[activeImageIndex].imageSrc})`,
+                    backgroundImage: `url(${WHATWEDO[activeImageIndex2].imageSrc})`,
                   }}
-                  custom={direction}
+                  custom={direction2}
                   variants={textSliderVariants}
                   initial="incoming"
                   animate="active"
@@ -282,7 +345,11 @@ const Home = () => {
                   dragElastic={1}
                   onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                   className={styles.image}
-                ></motion.div>
+                >
+                  <motion.div className={styles.heroImage}>
+                    <Image src={WHATWEDO[activeImageIndex2].imageSrc} sizes="100vh" style={{width:'auto', height:'100%', objectFit: 'cover', borderRadius:"1rem 0 0 1rem"}}/>
+                  </motion.div>
+                </motion.div>
               </AnimatePresence>
             </div>
           </div>

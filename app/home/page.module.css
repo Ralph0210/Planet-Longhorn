@@ -16,7 +16,7 @@
   .slider {
     position: relative;
     height: 75rem;
-    width: 63%;
+    width: 100%;
     overflow: hidden;
   
     /* @media only screen and (max-width: 375px) {
@@ -43,6 +43,10 @@
     }
   }
   
+  .heroImage{
+    width: 100%;
+    height: 100%;
+  }
 
 .hero_right_container{
     width: 37%;
