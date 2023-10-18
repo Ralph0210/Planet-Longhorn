@@ -49,18 +49,42 @@ const textSliderVariants = {
   }),
 };
 
+const memberSliderVariants = {
+  incoming: (direction) => ({
+    y: direction > 0 ? "100%" : "-100%",
+    scale: 1,
+    opacity: 0,
+  }),
+  active: { y: 0, scale: 1, opacity: 1 },
+  exit: (direction) => ({
+    y: direction > 0 ? "-100%" : "100%",
+    scale: 1,
+    opacity: 0.2,
+  }),
+};
+
 const sliderTransition = {
   duration: 1,
   ease: [0.56, 0.03, 0.12, 1.04],
 };
 
+const sliderTransition2 = {
+  duration: 3,
+  ease: [0.56, 0.03, 0.12, 1.04],
+};
+
 const Home = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
+  const [[imageCount2, direction2], setImageCount2] = useState([0, 0]);
 
   const activeImageIndex = wrap(0, IMAGES.length, imageCount);
+  const activeImageIndex2 = wrap(0, MEMBERS.length, imageCount2);
 
   const swipeToImage = (swipeDirection) => {
     setImageCount([imageCount + swipeDirection, swipeDirection]);
+  };
+  const swipeToImage2 = (swipeDirection) => {
+    setImageCount2([imageCount2 + swipeDirection, swipeDirection]);
   };
 
   const dragEndHandler = (dragInfo) => {
@@ -82,6 +106,16 @@ const Home = () => {
       clearInterval(interval); // Clean up the interval on component unmount
     };
   }, [imageCount]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      swipeToImage2(1); // Move to the next image
+    }, 10000);
+
+    return () => {
+      clearInterval(interval); // Clean up the interval on component unmount
+    };
+  }, [imageCount2]);
 
   const expand = {
     hidden: { opacity: 1, width: "0%" },
@@ -243,14 +277,14 @@ const Home = () => {
         </div>
         <div className={styles.become_member_slider_container}>
           <div className={styles.become_member_slider}>
-            <AnimatePresence initial={false} custom={direction}>
+            <AnimatePresence initial={false} custom={direction2}>
               <motion.div
-                key={imageCount}
+                key={imageCount2}
                 style={{
-                  backgroundColor: MEMBERS[activeImageIndex].bgcolor,
+                  backgroundColor: MEMBERS[activeImageIndex2].bgcolor,
                 }}
-                custom={direction}
-                variants={sliderVariants}
+                custom={direction2}
+                variants={memberSliderVariants}
                 initial="incoming"
                 animate="active"
                 exit="exit"
@@ -260,7 +294,40 @@ const Home = () => {
                 dragElastic={1}
                 onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                 className={styles.image}
-              ></motion.div>
+              >{MEMBERS[activeImageIndex2].country}
+                <motion.div
+                className={styles.become_member_image}
+                key={imageCount2}
+                custom={direction2}
+                variants={memberSliderVariants}
+                transition={{duration: 2}}
+              >
+                <Image
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px",
+                  }}
+                  src={MEMBERS[activeImageIndex2].imageSrc}
+                />
+                
+                <motion.p
+                custom={direction2}
+                key={imageCount2}
+                variants={memberSliderVariants}
+                transition={{duration:2.5}}
+                className={styles.member_name}
+                >{MEMBERS[activeImageIndex2].name}</motion.p>
+                <motion.p
+                custom={direction2}
+                key={imageCount2}
+                variants={memberSliderVariants}
+                className={`${styles.member_text} ${Georgia.className}`}
+                transition={{duration:3}}>{MEMBERS[activeImageIndex2].text}</motion.p>
+              </motion.div>
+              </motion.div>
+              
             </AnimatePresence>
           </div>
         </div>
@@ -323,21 +390,23 @@ const Home = () => {
             <p>UTC 0.104</p>
           </div>
           <motion.div
-          variants={expand}
-          initial="hidden"
-          whileInView="visible"
-          className={styles.line}
-          transition={{ duration: 0.5 }}></motion.div>
+            variants={expand}
+            initial="hidden"
+            whileInView="visible"
+            className={styles.line}
+            transition={{ duration: 0.5 }}
+          ></motion.div>
           <div className={styles.icon_text}>
             <Image src={food} />
             <p>Free Food</p>
           </div>
           <motion.div
-          variants={expand}
-          initial="hidden"
-          whileInView="visible"
-          className={styles.line}
-          transition={{ duration: 0.5 }}></motion.div>
+            variants={expand}
+            initial="hidden"
+            whileInView="visible"
+            className={styles.line}
+            transition={{ duration: 0.5 }}
+          ></motion.div>
         </div>
       </div>
     </Layout>
