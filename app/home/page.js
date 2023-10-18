@@ -300,14 +300,46 @@ const Home = () => {
         <div className={styles.au_image_gallery}></div>
       </div>
 
-      {/* become a member section */}
-      <div className={styles.become_member_container}>
-        <div className={styles.become_member_left_container}>
-          <h4 className={` ${Fjalla.className} ${styles.become_member_h4}`}>
+
+      {/* membership */}
+      <div className={styles.membership_container}>
+      <h4 className={` ${Fjalla.className} ${styles.become_member_h4}`}>
             If you are into those...
           </h4>
           <h3 className={` ${Fjalla.className} ${styles.become_member_h3}`}>
             Become a Member!
+          </h3>
+        <div className={styles.benefits}>
+          <h5 className={Fjalla.className}>Membership Benefits</h5>
+          <ul className={Georgia.className}>
+            <li>Free or discounted rates on all events</li>
+            <li>
+              Get points for coming to events, top 10 members get free dinner
+              with officers before formal
+            </li>
+            <li>Explore Austin and meet people from all around the world</li>
+          </ul>
+        </div>
+        <div className={styles.pricing}>
+          <h5 className={Fjalla.className}>Membership Pricing</h5>
+          <ul className={Georgia.className}>
+            <li>one semester: $35</li>
+            <li>one year: $70</li>
+          </ul>
+        </div>
+        <div className={styles.joinButton}>
+          <a>Join Now</a>
+          <p>
+            or follow us on <a>instagram</a>
+          </p>
+        </div>
+      </div>
+
+      {/* become a member section */}
+      <div className={styles.become_member_container}>
+        <div className={styles.become_member_left_container}>
+        <h3 className={` ${Fjalla.className} ${styles.become_member_h3}`} style={{color: 'white'}}>
+            Meet Our Top Members!
           </h3>
         </div>
         <div className={styles.become_member_slider_container}>
@@ -369,33 +401,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* membership */}
-      <div className={styles.membership_container}>
-        <div className={styles.benefits}>
-          <h5 className={Fjalla.className}>Membership Benefits</h5>
-          <ul className={Georgia.className}>
-            <li>Free or discounted rates on all events</li>
-            <li>
-              Get points for coming to events, top 10 members get free dinner
-              with officers before formal
-            </li>
-            <li>Explore Austin and meet people from all around the world</li>
-          </ul>
-        </div>
-        <div className={styles.pricing}>
-          <h5 className={Fjalla.className}>Membership Pricing</h5>
-          <ul className={Georgia.className}>
-            <li>one semester: $35</li>
-            <li>one year: $70</li>
-          </ul>
-        </div>
-        <div className={styles.joinButton}>
-          <a>Join Now</a>
-          <p>
-            or follow us on <a>instagram</a>
-          </p>
-        </div>
-      </div>
 
       {/* up coming */}
       <div>
