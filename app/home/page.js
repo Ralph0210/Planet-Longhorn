@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./page.module.css";
 import Layout from "../components/Layout";
 import { wrap } from "@popmotion/popcorn";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import localFont from "next/font/local";
 import { ParallaxText } from "../components/Marquees/Marquee1";
 import { ParallaxText2 } from "../components/Marquees/Marquee2";
@@ -27,6 +27,14 @@ import Himage10 from '../../public/hero_slider/10.JPG'
 import Wimage1 from '../../public/whatWeDo/1.JPEG'
 import Wimage2 from '../../public/whatWeDo/2.JPG'
 import Wimage3 from '../../public/whatWeDo/3.jpg'
+
+import AUimage1 from '../../public/au_image_gallery/1.jpg'
+import AUimage2 from '../../public/au_image_gallery/2.JPG'
+import AUimage3 from '../../public/au_image_gallery/3.JPG'
+import AUimage4 from '../../public/au_image_gallery/4.jpeg'
+import AUimage5 from '../../public/au_image_gallery/5.jpeg'
+import AUimage6 from '../../public/au_image_gallery/6.jpeg'
+
 
 import josephine from '../../public/team/josephine.jpg'
 import petar from '../../public/team/petar.jpg'
@@ -171,6 +179,7 @@ const WHATWEDO = [
 const Home = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
   const [[imageCount2, direction2], setImageCount2] = useState([0, 0]);
+  const [active, setActive] = useState('socials')
 
   const activeImageIndex = wrap(0, IMAGES.length, imageCount);
   const activeImageIndex2 = wrap(0, MEMBERS.length, imageCount2);
@@ -216,6 +225,63 @@ const Home = () => {
     hidden: { opacity: 1, width: "0%" },
     visible: { opacity: 1, width: "100%" },
   };
+
+  const expand2 = {
+    hidden: { opacity: 1, width: "30%" },
+    visible: { opacity: 1, width: "50%" },
+  };
+
+  const controls = useAnimation();
+  const [textToDisplay, setTextToDisplay] = useState([]);
+
+  useEffect(() => {
+    controls.start({ opacity: 0, x: 20 }); // Animate text out
+    setTimeout(() => {
+      switch (active) {
+        case "socials":
+          setTextToDisplay([
+            AUimage1,
+            'Even if you are shy',
+            AUimage2,
+            'Come Meet People Worldwide',
+            AUimage3,
+            'Helo'
+          ]);
+          break;
+        case "sports":
+          setTextToDisplay([
+            AUimage4,
+            'Even if you are shy',
+            AUimage5,
+            'Come Meet People Worldwide',
+            AUimage6,
+            'Helo'
+          ]);
+          break;
+        case "meetings":
+          setTextToDisplay([
+            "Healthcare Equity",
+            "Create a world where healthcare reaches everyone, regardless of their circumstances.",
+            "Becoming a part of our community, you'll have the chance to amplify crucial healthcare issues, ignite change, and create a brighter, healthier future for underserved communities worldwide.",
+            kid,
+            surgery
+          ]);
+          break;
+          case "activities":
+          setTextToDisplay([
+            "Healthcare Equity",
+            "Create a world where healthcare reaches everyone, regardless of their circumstances.",
+            "Becoming a part of our community, you'll have the chance to amplify crucial healthcare issues, ignite change, and create a brighter, healthier future for underserved communities worldwide.",
+            kid,
+            surgery
+          ]);
+          break;
+        default:
+          setTextToDisplay("Default Text");
+      }
+      controls.start({ opacity: 1, x: 0 }); // Animate text in
+    }, 300); // Adjust the delay as needed
+  }, [active]);
 
   return (
     <Layout>
@@ -359,12 +425,36 @@ const Home = () => {
       {/* about us image gallery */}
       <div className={styles.au_image_gallery_container}>
         <ul className={styles.au_image_list}>
-          <li className={styles.li}>Socials</li>
-          <li className={styles.li}>Sports</li>
-          <li className={styles.li}>Meetings</li>
-          <li className={styles.li}>Activities</li>
+          <li className={active === 'socials' ? `${styles.active} ${styles.li}` : styles.li}  value='socials' onClick={() => setActive('socials')}>Socials</li>
+          <li className={active === 'sports' ? `${styles.active} ${styles.li}` : styles.li} onClick={() => setActive('sports') } value='sports' >Sports</li>
+          <li className={active === 'meetings' ? `${styles.active} ${styles.li}` : styles.li} onClick={() => setActive('meetings')} value='meetings'>Meetings</li>
+          <li className={active === 'activities' ? `${styles.active} ${styles.li}` : styles.li} onClick={() => setActive('activities')} value='activities'>Activities</li>
         </ul>
-        <div className={styles.au_image_gallery}></div>
+        <div className={styles.au_image_gallery}>
+          <div className={styles.au_image_container}>
+                <motion.div className={styles.au_image_1}
+                variants={expand2}
+                initial="hidden"
+                whileHover='visible'
+                transition={{ ease: "easeOut", duration: 0.8 }}>
+                  <Image src={textToDisplay[0]} sizes="100vw"  style={{width:'100%', height:'auto', objectFit:'cover', borderRadius:"1rem"}}/>
+                  <h2 className={styles.au_image_h2}>{textToDisplay[1]}</h2>
+                </motion.div>
+                <div className={styles.au_image_2}>
+                  <Image src={textToDisplay[2]} sizes="100vw" style={{width:'100%', height:'auto', objectFit: 'cover', borderRadius:"1rem"}}/>
+                  <h2 className={styles.au_image_h2}>{textToDisplay[3]}</h2>
+                </div>
+                <motion.div className={styles.au_image_3}
+                
+                variants={expand2}
+                initial="hidden"
+                whileHover='visible'
+                transition={{ ease: "easeOut", duration: 0.8 }}>
+                  <Image src={textToDisplay[4]} sizes="100vw" style={{width:'100%', height:'auto', objectFit: 'cover', borderRadius:"1rem"}}/>
+                  <h2 className={styles.au_image_h2}>{textToDisplay[5]}</h2>
+                </motion.div>
+          </div>
+        </div>
       </div>
 
 
