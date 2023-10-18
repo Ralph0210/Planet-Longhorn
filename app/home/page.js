@@ -338,6 +338,7 @@ const Home = () => {
                 transition={{duration: 2}}
               >
                 <Image
+                priority
                   sizes="100vw"
                   style={{
                     width: "100%",
