@@ -10,6 +10,7 @@ import { ParallaxText } from "../events/page";
 import { Fjalla_One } from "next/font/google";
 
 import { IMAGES } from "./Images";
+import { MEMBERS } from "./member";
 
 const Didot = localFont({ src: "./didotBold.otf" });
 const Fjalla = Fjalla_One({ weight: "400", subsets: ["latin"] });
@@ -200,6 +201,50 @@ const Home = () => {
             </AnimatePresence>
           </div>
         </div>
+        </div>
+      </div>
+
+      {/* about us image gallery */}
+      <div className={styles.au_image_gallery_container}>
+        <ul className={styles.au_image_list}>
+          <li className={styles.li}>Socials</li>
+          <li className={styles.li}>Sports</li>
+          <li className={styles.li}>Meetings</li>
+          <li className={styles.li}>Activities</li>
+        </ul>
+        <div className={styles.au_image_gallery}></div>
+      </div>
+
+      {/* become a member section */}
+      <div className={styles.become_member_container}>
+          <div className={styles.become_member_left_container}>
+          <h4 className={` ${Fjalla.className} ${styles.become_member_h4}`}>
+            If you are into those...
+          </h4>
+          <h3 className={` ${Fjalla.className} ${styles.become_member_h3}`}>Become a Member!</h3>
+          </div>
+          <div className={styles.become_member_slider_container}>
+          <div className={styles.become_member_slider}>
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={imageCount}
+                style={{
+                  backgroundColor: MEMBERS[activeImageIndex].bgcolor,
+                }}
+                custom={direction}
+                variants={sliderVariants}
+                initial="incoming"
+                animate="active"
+                exit="exit"
+                transition={sliderTransition}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
+                className={styles.image}
+              ></motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </Layout>
