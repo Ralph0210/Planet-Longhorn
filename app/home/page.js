@@ -14,8 +14,12 @@ import time from "../../public/time.svg";
 import location from "../../public/location.svg";
 import food from "../../public/food.svg";
 
+import josephine from '../../public/team/josephine.jpg'
+import petar from '../../public/team/petar.jpg'
+import komie from '../../public/team/komie.jpg'
+
 import { IMAGES } from "./Images";
-import { MEMBERS } from "./member";
+// import { MEMBERS } from "./member";
 
 const Didot = localFont({ src: "./didotBold.otf" });
 const Fjalla = Fjalla_One({ weight: "400", subsets: ["latin"] });
@@ -72,6 +76,37 @@ const sliderTransition2 = {
   duration: 3,
   ease: [0.56, 0.03, 0.12, 1.04],
 };
+
+const MEMBERS = [
+  {
+    id: 0,
+    imageSrc:
+      josephine,
+      name: 'Josephine',
+      
+      text: 'test',
+      bgcolor: '#FFC6C6',
+      country: "Netherland"
+  },
+  {
+    id: 1,
+    imageSrc:
+      petar,
+      name: 'Petar',
+      text: 'test2',
+      bgcolor: '#D6CABD',
+      country: "Macedonia",
+  },
+  {
+    id: 2,
+    imageSrc:
+      komie,
+      name: 'Komie',
+      text: 'test3',
+      bgcolor: '#BECAED',
+      country:"Houston"
+  }
+]
 
 const Home = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);

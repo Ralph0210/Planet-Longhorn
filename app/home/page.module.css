@@ -330,13 +330,13 @@ letter-spacing: -0.0704rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    will-change: transform, opacity;
-    scroll-snap-align: center;
+    /* will-change: transform, opacity; */
+    /* scroll-snap-align: center; */
     color: rgba(121, 121, 121, 0.10);
     font-size: 35rem;
 font-style: normal;
 font-weight: 400;
-line-height: 150%; /* 52.5rem */
+line-height: 250%;
 letter-spacing: -0.385rem;
 text-align: center;
   }
