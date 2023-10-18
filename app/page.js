@@ -52,17 +52,17 @@ const router = useRouter();
 <div > 
   <motion.span initial='hidden' animate='visible' transition={{staggerChildren: 0.03}} className={styles.welcomeText}>
     {text1.split("").map((char) => (
-      <motion.span variants={staggerIn} className={styles.char}>{char}</motion.span>
+      <motion.span key={char} variants={staggerIn} className={styles.char}>{char}</motion.span>
     ))}
     {text2.split("").map((char) => (
-      <motion.span className={styles.primary} variants={staggerIn} >{char}</motion.span>
+      <motion.span key={char}  className={styles.primary} variants={staggerIn} >{char}</motion.span>
     ))}
     <br/>
     {text3.split("").map((char) => (
-      <motion.span variants={staggerIn} className={styles.char}>{char}</motion.span>
+      <motion.span key={char}  variants={staggerIn} className={styles.char}>{char}</motion.span>
     ))}
     {text4.split("").map((char) => (
-      <motion.span variants={staggerIn} className={styles.primary}>{char}</motion.span>
+      <motion.span key={char}  variants={staggerIn} className={styles.primary}>{char}</motion.span>
     ))}
   </motion.span>
 </div>
