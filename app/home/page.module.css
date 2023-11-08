@@ -525,7 +525,7 @@ letter-spacing: -0.022rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  
+  margin-bottom: 10rem;
 }
 
 .gm_h4{
@@ -563,4 +563,18 @@ letter-spacing: -0.022rem;
 .line{
   height: 0.2rem;
   background-color:var(--underline-color);
+}
+
+.upcomingContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20rem;
+}
+
+.instaContainer{
+  display: flex;
+  width: 63rem;
+  flex-direction: column;
 }

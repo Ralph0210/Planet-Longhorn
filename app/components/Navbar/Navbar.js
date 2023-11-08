@@ -92,7 +92,9 @@ const Navbar = () => {
           </li>
 
           <motion.li whileTap={{ scale: 0.8 }}
-              whileHover={{ scale: 1.1 }} className={`${styles.li}`}>
+              whileHover={{ scale: 1.1 }} 
+              // className={`${styles.li}`}
+              >
             <motion.a
               target="-blank"
               href="https://docs.google.com/forms/d/e/1FAIpQLSePWZRsdPBlzB8T-2FO99-nZRwawLw4qEgNjHqjtJOpqIhsTw/viewform?usp=sf_link"
