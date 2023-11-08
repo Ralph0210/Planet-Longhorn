@@ -28,16 +28,16 @@ import Wimage1 from "../../public/whatWeDo/1.JPEG";
 import Wimage2 from "../../public/whatWeDo/2.JPG";
 import Wimage3 from "../../public/whatWeDo/3.jpg";
 
-import AUimage1 from "../../public/au_image_gallery/1.jpg";
+import AUimage1 from "../../public/au_image_gallery/1.JPG";
 import AUimage2 from "../../public/au_image_gallery/2.JPG";
-import AUimage3 from "../../public/au_image_gallery/3.JPG";
+import AUimage3 from "../../public/au_image_gallery/3.jpg";
 import AUimage4 from "../../public/au_image_gallery/4.jpg";
-import AUimage5 from "../../public/au_image_gallery/5.jpg";
+import AUimage5 from "../../public/au_image_gallery/5.JPG";
 import AUimage6 from "../../public/au_image_gallery/6.jpeg";
 import AUimage7 from "../../public/au_image_gallery/7.jpeg";
 import AUimage8 from "../../public/au_image_gallery/8.jpeg";
-import AUimage9 from "../../public/au_image_gallery/9.jpg";
-import AUimage10 from "../../public/au_image_gallery/10.jpg";
+import AUimage9 from "../../public/au_image_gallery/9.JPG";
+import AUimage10 from "../../public/au_image_gallery/10.JPG";
 import AUimage11 from "../../public/au_image_gallery/11.jpg";
 import AUimage12 from "../../public/au_image_gallery/12.jpg";
 
