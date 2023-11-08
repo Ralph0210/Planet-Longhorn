@@ -1,13 +1,15 @@
 .footerLinks{
+    position: fixed;
     background-color: var(--background-color);
     display: flex;
     padding: 6rem 6rem 6rem 6rem;
     gap: 8rem;
     border-radius: 5rem 0 0 5rem;
-    position: absolute;
+    /* position: absolute; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-0%, -100%);
+    z-index: 9999;
 }
 
 .footerLinks ul{

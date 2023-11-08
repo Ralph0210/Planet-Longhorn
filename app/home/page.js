@@ -366,7 +366,7 @@ const Home = () => {
       </div>
       <ParallaxText
         baseVelocity={-5}
-        style={{ fontSize: "6.4rem", color: "#E9AC82" }}
+        style={{color: "#E9AC82" }}
       >
         Uniting Longhorns around the World.
       </ParallaxText>

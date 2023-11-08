@@ -13,7 +13,7 @@ import {
 } from "framer-motion";
 import { wrap } from "@popmotion/popcorn";
 
-export function ParallaxText2({ children, baseVelocity = 100 }) {
+export function ParallaxText2({ children, style, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -61,10 +61,10 @@ export function ParallaxText2({ children, baseVelocity = 100 }) {
   return (
     <div className={styles.parallax}>
       <motion.div className={styles.scroller} style={{ x }}>
-        <span >{children}</span>
-        <span >{children}</span>
-        <span>{children}</span>
-        <span>{children}</span>
+        <span style={style}>{children}</span>
+        <span style={style}>{children}</span>
+        <span style={style}>{children}</span>
+        <span style={style}>{children}</span>
       </motion.div>
     </div>
   );

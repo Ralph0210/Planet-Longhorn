@@ -72,3 +72,19 @@ letter-spacing: -0.0176rem;
   .navbarContainer{
   }
 }
+
+@media (max-width:480px) {
+
+  .navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    margin: 0 2.5rem;
+}
+
+.logoContainer{
+  width: 3.5rem;
+}
+
+}

@@ -23,9 +23,23 @@
     margin-right: 10px;
     /* color: #E9AC82; */
 
-/* font-size: 6.4rem; */
+font-size: 6.4rem;
 font-style: normal;
 font-weight: 400;
 line-height: 146.5%; /* 9.376rem */
 letter-spacing: 0.0896rem;
+  }
+
+  @media (max-width:480px) {
+    .parallax span {
+      display: block;
+      margin-right: 10px;
+      /* color: #E9AC82; */
+  
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 146.5%; /* 9.376rem */
+  letter-spacing: 0.0896rem;
+    }
   }
