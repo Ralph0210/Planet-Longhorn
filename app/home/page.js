@@ -582,9 +582,10 @@ const Home = () => {
           </ul>
         </div>
         <div className={styles.joinButton}>
-          <a>Join Now</a>
+          <a className={styles.joinNow} target="-blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSePWZRsdPBlzB8T-2FO99-nZRwawLw4qEgNjHqjtJOpqIhsTw/viewform?usp=sf_link">Join Now</a>
           <p>
-            or follow us on <a>instagram</a>
+            or follow us on <a target="-blank" href="https://www.instagram.com/planet.longhorn/" className={styles.animateCharcter}>instagram</a>
           </p>
         </div>
       </div>
@@ -669,7 +670,7 @@ const Home = () => {
           Up Coming
         </ParallaxText2>
         <div className={styles.instaContainer}>
-          <Image src={insta1} style={{height:'auto', width:'100%'}}/>
+          <Image href='https://www.instagram.com/p/CzU6cTzqsLK/?img_index=1' src={insta1} style={{height:'auto', width:'100%'}}/>
           {/* <p>Come to our general meetings and cultural presentation on Tuesday at 6:00pm!</p> */}
         </div>
       </div>

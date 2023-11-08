@@ -486,12 +486,17 @@ gap: 2rem;
   margin-top: 10rem;
 }
 
-.joinButton a{
+.joinNow{
   font-size: 6.4rem;
 font-style: normal;
 font-weight: 400;
 line-height: 60%;
 letter-spacing: -0.0704rem;
+cursor: pointer;
+}
+
+.joinNow:hover{
+  background-color: #fff800;
 }
 
 .joinButton p{
@@ -503,7 +508,7 @@ letter-spacing: -0.022rem;
 }
 
 .joinButton p > a{
-  background: linear-gradient(93deg, #D706F9 59.91%, #F20909 100%);
+  /* background: linear-gradient(93deg, #D706F9 59.91%, #F20909 100%); */
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -578,3 +583,36 @@ letter-spacing: -0.022rem;
   width: 63rem;
   flex-direction: column;
 }
+
+.animateCharcter
+{
+  cursor: pointer;
+  font-size: 2rem;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      /* font-size: 190px; */
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
