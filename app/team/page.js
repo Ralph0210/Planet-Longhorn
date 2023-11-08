@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 const page = () => {
   return (
     <Layout>
-    <div>Under construction, come back later!</div>
+    <div>page</div>
     </Layout>
   )
 }

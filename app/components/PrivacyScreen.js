@@ -13,7 +13,7 @@ const PrivacyScreen = () => {
         right: 0,
         bottom: 0,
         backgroundColor: '#C15002',
-        zIndex: 2,}}
+        zIndex: 9999,}}
     ></motion.div>
   );
 };

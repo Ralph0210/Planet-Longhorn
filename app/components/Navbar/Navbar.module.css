@@ -63,6 +63,7 @@ letter-spacing: -0.0176rem;
 @media (max-width:768px) {
   .mobileNav{
     display: flex;
+    align-items: center;
   }
 
   .nav{

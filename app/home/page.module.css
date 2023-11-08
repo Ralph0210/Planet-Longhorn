@@ -1,4 +1,6 @@
-
+.au_image_gallery_mobile{
+  display: none;
+}
   
   .hero {
     display: flex;

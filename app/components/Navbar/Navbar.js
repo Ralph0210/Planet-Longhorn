@@ -16,6 +16,7 @@ const myFont = localFont({ src: './DidotRegular.ttf' })
 const Navbar = () => {
   const pathname = usePathname();
   const [isChecked, setIsChecked] = useState(false);
+  const [active, setActive] = useState("");
   
 
   return (
@@ -40,7 +41,7 @@ const Navbar = () => {
             }`}
             onClick={() => setActive("home")}
           >
-            <Link href="/" className={styles.link}>
+            <Link href="/home" className={styles.link}>
               Home
             </Link>
           </li>
@@ -56,11 +57,11 @@ const Navbar = () => {
           </li>
           <li
             className={`${styles.li} ${
-              pathname == "/initiatives" ? styles.iniactive : ""
+              pathname == "/sports" ? styles.iniactive : ""
             }`}
-            onClick={() => setActive("initiatives")}
+            onClick={() => setActive("sports")}
           >
-            <Link href="/initiatives" className={styles.link}>
+            <Link href="/sports" className={styles.link}>
               Sports
             </Link>
           </li>
@@ -68,18 +69,19 @@ const Navbar = () => {
             className={`${styles.li} ${
               pathname == "/team" ? styles.eventsactive : ""
             }`}
-            onClick={() => setActive("events")}
+            onClick={() => setActive("team")}
           >
             <Link href="/team" className={styles.link}>
               Team
             </Link>
           </li>
           <li
-            className={`${styles.li} ${styles.link}`}
-            onClick={() => scrollToElement("donation")}
-            style={{ cursor: "pointer" }}
+             className={`${styles.li} ${
+              pathname == "/galleries" ? styles.eventsactive : ""
+            }`}
+            onClick={() => setActive("galleries")}
           >
-            <a href="/#donation" className={styles.link}>
+            <a href="/galleries" className={styles.link}>
             Galleries
             </a>
           </li>
@@ -108,6 +110,15 @@ const Navbar = () => {
     </div>
 
     <nav className={styles.mobileNav}>
+            <motion.a
+            whileTap={{ scale: 0.8 }}
+            whileHover={{ scale: 1.1 }}
+              target="-blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSePWZRsdPBlzB8T-2FO99-nZRwawLw4qEgNjHqjtJOpqIhsTw/viewform?usp=sf_link"
+              className={styles.joinLink}
+            >
+              Join
+            </motion.a>
       <HamburgerIcon isChecked={isChecked} setIsChecked={setIsChecked} />
       {isChecked && <Menu />}
     </nav>

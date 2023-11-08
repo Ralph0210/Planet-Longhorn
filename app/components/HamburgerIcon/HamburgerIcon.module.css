@@ -5,7 +5,8 @@
   flex-direction: column;
   width: 70px;
   cursor: pointer;
-  transform: scale(0.3)
+  transform: scale(0.3);
+  z-index: 9999;
 }
 
 .label span {
