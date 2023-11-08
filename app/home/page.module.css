@@ -637,6 +637,8 @@ letter-spacing: -0.022rem;
   width: 100%;
   overflow: hidden;
 }
+
+
 .hero_right_container{
   width: 100%;
 }
@@ -645,6 +647,14 @@ letter-spacing: -0.022rem;
   font-size: 2rem;
 top: 50%;
   left: 20%;
+}
+
+.heroImage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .social_links{
@@ -860,6 +870,44 @@ letter-spacing: -0.022rem;
   justify-content: center;
   align-items: center;
   padding-bottom: 10rem;
+}
+
+.au_image_gallery{
+  width: 100%;
+  background-color: black;
+  height: 80vh;
+  display: none;
+}
+
+.au_image_gallery_mobile{
+  width: 100%;
+  background-color: black;
+  height: 70vh;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+}
+
+.mobile_image{
+  width: 30rem;
+  height: 30rem;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  /* background-color: red; */
+  margin-right: 5px;
+}
+
+.au_image_gallery_mobile_center_image{
+  display: flex;
+
+  /* overflow-x: scroll;
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1rem; */
 }
 
 }

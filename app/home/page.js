@@ -231,6 +231,11 @@ const Home = () => {
     visible: { opacity: 1, width: "50%" },
   };
 
+  const expand2Mobile = {
+    hidden: { opacity: 0.5, width: "100%" },
+    visible: { opacity: 1, width: "100%" },
+  }
+
   const controls = useAnimation();
   const [textToDisplay, setTextToDisplay] = useState([]);
 
@@ -300,6 +305,7 @@ const Home = () => {
                 key={imageCount}
                 style={{
                   backgroundImage: IMAGES[activeImageIndex].imageSrc,
+                  backgroundPosition:'center'
                 }}
                 custom={direction}
                 variants={sliderVariants}
@@ -320,7 +326,8 @@ const Home = () => {
                     style={{
                       width: "auto",
                       height: "100%",
-                      objectFit: "cover",
+                      // objectFit: "cover",
+                      // backgroundPosition:'50%'
                     }}
                   />
                 </motion.div>
@@ -552,6 +559,47 @@ const Home = () => {
               </motion.div>
           </motion.div>
           </AnimatePresence>
+        </div>
+
+        <div className={styles.au_image_gallery_mobile}>
+          {/* <motion.div className={styles.au_image_gallery_mobile_center_image}> */}
+          <div className={styles.mobile_image}>
+          <Image
+                  src={textToDisplay[0]}
+                  sizes="100vh"
+                  style={{
+                    width: "auto",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "1rem",
+                  }}
+                />
+                </div>
+                <div className={styles.mobile_image}>
+                <Image
+                  src={textToDisplay[2]}
+                  sizes="100vh"
+                  style={{
+                    width: "auto",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "1rem",
+                  }}
+                />
+                </div>
+                <div className={styles.mobile_image}>
+                 <Image
+                  src={textToDisplay[4]}
+                  sizes="100vh"
+                  style={{
+                    width: "auto",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "1rem",
+                  }}
+                />
+                </div>
+          {/* </motion.div> */}
         </div>
       </div>
 
