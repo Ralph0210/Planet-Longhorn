@@ -41,7 +41,7 @@ import AUimage10 from "../../public/au_image_gallery/10.JPG";
 import AUimage11 from "../../public/au_image_gallery/11.jpg";
 import AUimage12 from "../../public/au_image_gallery/12.jpg";
 
-import insta1 from '../../public/insta/insta1.jpg'
+import insta1 from "../../public/insta/insta1.jpg";
 
 import josephine from "../../public/team/josephine.jpg";
 import petar from "../../public/team/petar.jpg";
@@ -123,7 +123,7 @@ const MEMBERS = [
     id: 2,
     imageSrc: komie,
     name: "Komie",
-    text: '"I did not get arrested"',
+    text: '"Helo"',
     bgcolor: "#BECAED",
     country: "Houston",
   },
@@ -176,6 +176,14 @@ const Home = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
   const [[imageCount2, direction2], setImageCount2] = useState([0, 0]);
   const [active, setActive] = useState("socials");
+  const scrollContainerRef = useRef(null);
+
+  // Reset the scroll position to 0 when 'active' changes
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft = 0;
+    }
+  }, [active]);
 
   const activeImageIndex = wrap(0, IMAGES.length, imageCount);
   const activeImageIndex2 = wrap(0, MEMBERS.length, imageCount2);
@@ -232,9 +240,14 @@ const Home = () => {
   };
 
   const expand2Mobile = {
-    hidden: { opacity: 0.5, width: "100%" },
-    visible: { opacity: 1, width: "100%" },
-  }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const scroll = {
+    hidden: { opacity: 0.5 },
+    visible: { opacity: 1 },
+  };
 
   const controls = useAnimation();
   const [textToDisplay, setTextToDisplay] = useState([]);
@@ -305,7 +318,7 @@ const Home = () => {
                 key={imageCount}
                 style={{
                   backgroundImage: IMAGES[activeImageIndex].imageSrc,
-                  backgroundPosition:'center'
+                  backgroundPosition: "center",
                 }}
                 custom={direction}
                 variants={sliderVariants}
@@ -371,10 +384,7 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      <ParallaxText
-        baseVelocity={-5}
-        style={{color: "#E9AC82" }}
-      >
+      <ParallaxText baseVelocity={-5} style={{ color: "#E9AC82" }}>
         Uniting Longhorns around the World.
       </ParallaxText>
 
@@ -495,13 +505,14 @@ const Home = () => {
         </ul>
         <div className={styles.au_image_gallery}>
           <AnimatePresence>
-          <motion.div 
-          className={styles.au_image_container}
-          key={active}
-          initial={{ x: 0, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 0, opacity: 0 }}
-      transition={{ ease: "easeOut", duration: 0.8 }}>
+            <motion.div
+              className={styles.au_image_container}
+              key={active}
+              initial={{ x: 0, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 0, opacity: 0 }}
+              transition={{ ease: "easeOut", duration: 0.8 }}
+            >
               <motion.div
                 className={styles.au_image_1}
                 variants={expand2}
@@ -521,11 +532,13 @@ const Home = () => {
                 />
                 <h2 className={styles.au_image_h2}>{textToDisplay[1]}</h2>
               </motion.div>
-              <motion.div className={styles.au_image_2}
-              variants={expand3}
-              initial="hidden"
-              whileHover="visible"
-              transition={{ ease: "easeOut", duration: 0.8 }}>
+              <motion.div
+                className={styles.au_image_2}
+                variants={expand3}
+                initial="hidden"
+                whileHover="visible"
+                transition={{ ease: "easeOut", duration: 0.8 }}
+              >
                 <Image
                   src={textToDisplay[2]}
                   sizes="100vw"
@@ -557,49 +570,109 @@ const Home = () => {
                 />
                 <h2 className={styles.au_image_h2}>{textToDisplay[5]}</h2>
               </motion.div>
-          </motion.div>
+            </motion.div>
           </AnimatePresence>
         </div>
 
-        <div className={styles.au_image_gallery_mobile}>
-          {/* <motion.div className={styles.au_image_gallery_mobile_center_image}> */}
-          <div className={styles.mobile_image}>
-          <Image
-                  src={textToDisplay[0]}
-                  sizes="100vh"
-                  style={{
-                    width: "auto",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "1rem",
-                  }}
-                />
-                </div>
-                <div className={styles.mobile_image}>
+        <div
+          className={styles.au_image_gallery_mobile}
+          ref={scrollContainerRef}
+        >
+          <motion.div
+            variants={scroll}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.3 }}
+            viewport={{ amount: 0.9 }}
+          >
+            <div className={styles.mobile_image_text_container}>
+              <div className={styles.mobile_image}>
                 <Image
                   src={textToDisplay[2]}
-                  sizes="100vh"
+                  sizes="100vw"
                   style={{
-                    width: "auto",
+                    width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    borderRadius: "1rem",
                   }}
                 />
-                </div>
-                <div className={styles.mobile_image}>
-                 <Image
+              </div>
+              <motion.p
+                className={styles.mobile_image_text}
+                variants={expand2Mobile}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 0.3 }}
+                viewport={{ amount: 0.9 }}
+              >
+                {textToDisplay[3]}
+              </motion.p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={scroll}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.3 }}
+            viewport={{ amount: 0.9 }}
+          >
+            <div className={styles.mobile_image_text_container}>
+              <div className={styles.mobile_image}>
+                <Image
+                  src={textToDisplay[0]}
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <motion.p
+                className={styles.mobile_image_text}
+                variants={expand2Mobile}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 0.3 }}
+                viewport={{ amount: 0.9 }}
+              >
+                {textToDisplay[1]}
+              </motion.p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={scroll}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.3 }}
+            viewport={{ amount: 0.9 }}
+          >
+            <div className={styles.mobile_image_text_container}>
+              <div className={styles.mobile_image}>
+                <Image
                   src={textToDisplay[4]}
-                  sizes="100vh"
+                  sizes="100vw"
                   style={{
-                    width: "auto",
+                    width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    borderRadius: "1rem",
                   }}
                 />
-                </div>
-          {/* </motion.div> */}
+              </div>
+              <motion.p
+                className={styles.mobile_image_text}
+                variants={expand2Mobile}
+                initial="hidden"
+                whileInView="visible"
+                transition={{ duration: 0.3 }}
+                viewport={{ amount: 0.9 }}
+              >
+                {textToDisplay[5]}
+              </motion.p>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -630,10 +703,22 @@ const Home = () => {
           </ul>
         </div>
         <div className={styles.joinButton}>
-          <a className={styles.joinNow} target="-blank"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSePWZRsdPBlzB8T-2FO99-nZRwawLw4qEgNjHqjtJOpqIhsTw/viewform?usp=sf_link">Join Now</a>
+          <a
+            className={styles.joinNow}
+            target="-blank"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSePWZRsdPBlzB8T-2FO99-nZRwawLw4qEgNjHqjtJOpqIhsTw/viewform?usp=sf_link"
+          >
+            Join Now
+          </a>
           <p>
-            or follow us on <a target="-blank" href="https://www.instagram.com/planet.longhorn/" className={styles.animateCharcter}>instagram</a>
+            or follow us on{" "}
+            <a
+              target="-blank"
+              href="https://www.instagram.com/planet.longhorn/"
+              className={styles.animateCharcter}
+            >
+              instagram
+            </a>
           </p>
         </div>
       </div>
@@ -662,10 +747,6 @@ const Home = () => {
                 animate="active"
                 exit="exit"
                 transition={sliderTransition}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={1}
-                onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
                 className={styles.image}
               >
                 {MEMBERS[activeImageIndex2].country}
@@ -718,7 +799,11 @@ const Home = () => {
           Up Coming
         </ParallaxText2>
         <div className={styles.instaContainer}>
-          <Image href='https://www.instagram.com/p/CzU6cTzqsLK/?img_index=1' src={insta1} style={{height:'auto', width:'100%'}}/>
+          <Image
+            href="https://www.instagram.com/p/CzU6cTzqsLK/?img_index=1"
+            src={insta1}
+            style={{ height: "auto", width: "100%" }}
+          />
           {/* <p>Come to our general meetings and cultural presentation on Tuesday at 6:00pm!</p> */}
         </div>
       </div>
