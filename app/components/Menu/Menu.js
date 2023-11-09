@@ -9,22 +9,22 @@ const Menu = () => {
       <div className={styles.footerLinks}>
         <ul>
           <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/people">People</Link>
-          </li>
-          <li>
-            <Link href="/initiatives">Initiatives</Link>
+            <Link href="/home">Home</Link>
           </li>
           <li>
             <Link href="/events">Events</Link>
+          </li>
+          <li>
+            <Link href="/sports">Sports</Link>
+          </li>
+          <li>
+            <Link href="/team">Team</Link>
           </li>
           <li
             // onClick={() => scrollToElement("donation")}
             style={{ cursor: "pointer" }}
           >
-            <Link href="/#donation">Donation</Link>
+            <Link href="/galleries">Galleries</Link>
           </li>
           <li
             // onClick={() => scrollToElement("footer")}

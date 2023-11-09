@@ -88,4 +88,8 @@ letter-spacing: -0.0176rem;
   width: 3.5rem;
 }
 
+.joinLink{
+  z-index: 9999;
+}
+
 }

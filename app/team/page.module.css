@@ -1,0 +1,221 @@
+.teamContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.4%;
+}
+
+.team_hero_container{
+    display: flex;
+    height: 75rem;
+}
+
+.team_hero_left_container{
+    flex: 1;
+    background-color: #BE4F02;
+    position: relative;
+}
+.team_hero_left_container h2{
+    position: absolute;
+    color: white;
+    font-size: 20rem;
+font-style: normal;
+font-weight: 400;
+line-height: 82.5%; /* 16.5rem */
+letter-spacing: -0.22rem;
+top: 80%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+}
+
+.team_hero_right_container{
+    flex: 1;
+}
+
+.social_links{
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    gap: 4.8rem;
+    position: absolute;
+  color: rgba(255, 255, 255, 0.80);
+      font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 82.5%; /* 2.64rem */
+  letter-spacing: 0.0448rem;
+  top: 96%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  
+  .social_links >li:hover{
+    color: white;
+  }
+
+.team_carousel_firstDiv{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.team_carousel_button{
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.team_carousel_button button{
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  /* Optionally, you can remove any other default styles such as outline or box shadow */
+  outline: none;
+  box-shadow: none;
+  transform: scale(1.5);
+}
+
+.team_carousel_button button:hover{
+  transform: scale(1.8);
+  transition: 0.3 ease-in-out;
+}
+
+  .team_carousel_container h3{
+    font-size: 6.4rem;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 9.6rem */
+letter-spacing: -0.0704rem;
+  }
+
+  .team_carousel{
+    display: flex;
+    gap: 1.5rem;
+    /* overflow: auto; */
+  /* scroll-snap-type: x mandatory; */
+  }
+
+  .team_carousel_member_photo{
+    border-radius: 1rem;
+    width: 35rem;
+    height: 45rem;
+    scroll-snap-align: start;
+  }
+
+  .team_carousel_member p{
+    padding-top: 0.5rem;
+    font-size: 1.4rem;
+
+    color: var(--unimportantText-color);
+  }
+
+  .team_carousel_member span{
+    font-size: 2rem;
+  }
+
+  .team_carousel::-webkit-scrollbar {
+    display: none;
+    height: 5px;
+    width: 5px;
+    background: #fff3;
+    -webkit-border-radius: 1ex;
+  }
+  
+  .team_carousel::-webkit-scrollbar-thumb {
+    background: blue;
+    -webkit-border-radius: 1ex;
+  }
+  
+  .team_carousel::-webkit-scrollbar-corner {
+    background: #fff3;
+  }
+
+  .team_description h3{
+    font-size: 6.4rem;
+  }
+
+  .team_description p{
+    font-size: 2.4rem;
+  }
+
+  @media (max-width:480px) {
+    .team_hero_container{
+      display: flex;
+      flex-direction: column-reverse;
+      height: 75vh;
+  }
+
+  .team_hero_left_container{
+    background-color: #BE4F02;
+    position: relative;
+}
+.team_hero_left_container h2{
+    position: absolute;
+    color: white;
+    font-size: 6.4rem;
+font-style: normal;
+font-weight: 400;
+line-height: 82.5%; /* 16.5rem */
+letter-spacing: -0.22rem;
+top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.team_hero_right_container{
+  height: 45rem;
+}
+
+.social_links{
+  cursor: pointer;
+  list-style-type: none;
+  display: flex;
+  gap: 4.8rem;
+  position: absolute;
+color: rgba(255, 255, 255, 0.80);
+    font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: 82.5%; /* 2.64rem */
+letter-spacing: 0.0448rem;
+top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.team_carousel_button{
+  display: none;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.team_carousel_container h3{
+  font-size: 3.2rem;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 9.6rem */
+letter-spacing: -0.0704rem;
+}
+
+.team_carousel{
+  display: flex;
+  gap: 1.5rem;
+  overflow: auto;
+scroll-snap-type: x mandatory;
+}
+
+.team_description h3{
+  font-size: 3.2rem;
+}
+
+.team_description p{
+  font-size: 1.4rem;
+}
+
+  }

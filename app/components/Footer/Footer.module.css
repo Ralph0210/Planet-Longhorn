@@ -8,6 +8,7 @@
 }
 
 .footerContainer p{
+    color: black;
     position: absolute;
     font-size: 1.6rem;
     bottom: 0.5rem;
@@ -37,10 +38,12 @@
     font-size: 2rem;
     gap: 2rem;
     padding: 5rem 0;
+    color: black;
 }
 
 .rightContainer ul > li{
     font-size: 1.6rem;
+    color: black;
 }
 
 @media (max-width: 480px) {

@@ -44,7 +44,7 @@ import AUimage12 from "../../public/au_image_gallery/12.jpg";
 import insta1 from "../../public/insta/insta1.jpg";
 
 import josephine from "../../public/team/josephine.jpg";
-import petar from "../../public/team/petar.jpg";
+import petar from "../../public/team/petar.jpeg";
 import komie from "../../public/team/komie.jpg";
 
 // import { IMAGES } from "./Images";
