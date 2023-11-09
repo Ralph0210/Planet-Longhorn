@@ -40,6 +40,7 @@ import AUimage9 from "../../public/au_image_gallery/9.JPG";
 import AUimage10 from "../../public/au_image_gallery/10.JPG";
 import AUimage11 from "../../public/au_image_gallery/11.jpg";
 import AUimage12 from "../../public/au_image_gallery/12.jpg";
+import { Icon } from '@iconify/react';
 
 import insta1 from "../../public/insta/insta1.jpg";
 
@@ -815,7 +816,8 @@ const Home = () => {
         </h4>
         <div className={styles.gm_details}>
           <div className={styles.icon_text}>
-            <Image src={time} />
+          <Icon icon="mingcute:time-line" width='24px'/>
+            {/* <Image src={time} /> */}
             <p>Tuesday 6pm</p>
           </div>
           <motion.div
@@ -826,7 +828,8 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           ></motion.div>
           <div className={styles.icon_text}>
-            <Image src={location} />
+          <Icon icon="carbon:location" width='24px'/>
+            {/* <Image src={location} /> */}
             <p>UTC 0.104</p>
           </div>
           <motion.div
@@ -837,7 +840,8 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           ></motion.div>
           <div className={styles.icon_text}>
-            <Image src={food} />
+          <Icon icon="mdi:food-outline" width='24px'/>
+            {/* <Image src={food} /> */}
             <p>Free Food</p>
           </div>
           <motion.div

@@ -2,84 +2,107 @@ import josephine from '../../public/team/josephine.jpg'
 import petar from '../../public/team/petar.jpeg'
 import komie from '../../public/team/komie.jpg'
 import juliana from '../../public/team/juliana.jpg'
+import alejandro from '../../public/team/alejandro.jpeg'
+import daisy from '../../public/team/daisy.jpeg'
+import david from '../../public/team/david.jpeg'
+import pedro from '../../public/team/pedro.jpeg'
+import santiago from '../../public/team/santiago.jpeg'
+import sophia from '../../public/team/sophia.jpeg'
+import xuan from '../../public/team/xuan.jpeg'
+
+
+
+
 
 export const TEAM = [
         {
             id: 0,
             imageSrc:
               josephine,
-              name: 'Josephine',
+              name: 'Josephine Vermeulen',
               job:'President',
           },
           {
             id: 1,
             imageSrc:
-              petar,
-              name: 'Petar',
-              job: 'Student Affairs'
+              juliana,
+              name: 'Juliana Torres',
+              job:'Co-Vice President',
+            
           },
           {
             id: 2,
             imageSrc:
-              komie,
-              name: 'Komie',
-              job: 'Treasurer'
+            juliana,
+              name: 'Bella Zeballos',
+              job: 'Co-Vice President'
           },
           {
             id: 3,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              xuan,
+              name: 'Xuan Li',
+              job:'Director of Athletics',
+            
 
           },
           {
             id:4,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              pedro,
+              name: 'Pedro Zavala',
+              job:'Director of Business Relations',
+            
+            
           },
           {
-            id:4,
+            id:5,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              david,
+              name: 'David Mendieta',
+              job: 'Director of community affairs'
+           
           },
           {
-            id:4,
+            id:6,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              alejandro,
+              name: 'Alejandro Arias',
+              job:'Director of Events',
           },
           {
-            id:4,
+            id:7,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              daisy,
+              name: 'Daisy Ruiz',
+              job:'Director of philanthropy',
           },
           {
-            id:4,
+            id:8,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              santiago,
+              name: 'Santiago Garzón chacón',
+              job:'Co-director of student affairs',
           },
           {
-            id:4,
+            id:9,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              petar,
+              name: 'Petar iliev',
+              job:'Co-director of student affairs',
           },
           {
-            id:4,
+            id:10,
             imageSrc:
-              juliana,
-              name: 'Juliana',
-              job:'Co-Vice President',
+              komie,
+              name: 'Komie Nguyen',
+              job:'treasurer',
+          },
+          {
+            id:11,
+            imageSrc:
+              sophia,
+              name: 'Sophia forest',
+              job:'Historian',
           },
 ]

@@ -112,7 +112,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div style={{ width: "20rem" }}>
+        <div style={{ width: "20rem", paddingLeft:'1.4%' }}>
           <JoinButton />
         </div>
       </div>
