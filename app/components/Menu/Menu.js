@@ -29,7 +29,7 @@ const Menu = () => {
           <li
             onClick={() => scrollToElement("footer")}
             style={{ cursor: "pointer" }}
-          ><Link href="/#footer">Contact Us</Link>
+          >Contact Us
             
           </li>
         </ul>
