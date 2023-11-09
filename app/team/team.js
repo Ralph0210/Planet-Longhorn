@@ -30,13 +30,13 @@ export const TEAM = [
               job:'Co-Vice President',
             
           },
-          {
-            id: 2,
-            imageSrc:
-            juliana,
-              name: 'Bella Zeballos',
-              job: 'Co-Vice President'
-          },
+          // {
+          //   id: 2,
+          //   imageSrc:
+          //   juliana,
+          //     name: 'Bella Zeballos',
+          //     job: 'Co-Vice President'
+          // },
           {
             id: 3,
             imageSrc:

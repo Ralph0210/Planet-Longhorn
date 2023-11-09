@@ -12,22 +12,22 @@ const Menu = () => {
             <Link href="/home">Home</Link>
           </li>
           <li>
-            <Link href="/events">Events</Link>
-          </li>
-          <li>
-            <Link href="/sports">Sports</Link>
-          </li>
-          <li>
             <Link href="/team">Team</Link>
           </li>
-          <li
+          <li>
+            <Link href="/events">Events</Link>
+          </li>
+          {/* <li>
+            <Link href="/sports">Sports</Link>
+          </li> */}
+          {/* <li
             // onClick={() => scrollToElement("donation")}
             style={{ cursor: "pointer" }}
           >
             <Link href="/galleries">Galleries</Link>
-          </li>
+          </li> */}
           <li
-            // onClick={() => scrollToElement("footer")}
+            onClick={() => scrollToElement("footer")}
             style={{ cursor: "pointer" }}
           ><Link href="/#footer">Contact Us</Link>
             

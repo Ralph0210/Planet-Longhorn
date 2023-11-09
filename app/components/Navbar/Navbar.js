@@ -10,6 +10,7 @@ import { motion } from 'framer-motion'
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon'
 import localFont from 'next/font/local'
 import Menu from '../Menu/Menu'
+import { scrollToElement } from '../../utils/scroll'
 
 const myFont = localFont({ src: './DidotRegular.ttf' })
 
@@ -47,26 +48,6 @@ const Navbar = () => {
           </li>
           <li
             className={`${styles.li} ${
-              pathname == "/events" ? styles.peopleactive : ""
-            }`}
-            onClick={() => setActive("events")}
-          >
-            <Link href="/events" className={styles.link}>
-              Events
-            </Link>
-          </li>
-          <li
-            className={`${styles.li} ${
-              pathname == "/sports" ? styles.iniactive : ""
-            }`}
-            onClick={() => setActive("sports")}
-          >
-            <Link href="/sports" className={styles.link}>
-              Sports
-            </Link>
-          </li>
-          <li
-            className={`${styles.li} ${
               pathname == "/team" ? styles.eventsactive : ""
             }`}
             onClick={() => setActive("team")}
@@ -76,6 +57,26 @@ const Navbar = () => {
             </Link>
           </li>
           <li
+            className={`${styles.li} ${
+              pathname == "/events" ? styles.peopleactive : ""
+            }`}
+            onClick={() => setActive("events")}
+          >
+            <Link href="/events" className={styles.link}>
+              Events
+            </Link>
+          </li>
+          {/* <li
+            className={`${styles.li} ${
+              pathname == "/sports" ? styles.iniactive : ""
+            }`}
+            onClick={() => setActive("sports")}
+          >
+            <Link href="/sports" className={styles.link}>
+              Sports
+            </Link>
+          </li> */}
+          {/* <li
              className={`${styles.li} ${
               pathname == "/galleries" ? styles.eventsactive : ""
             }`}
@@ -84,7 +85,7 @@ const Navbar = () => {
             <a href="/galleries" className={styles.link}>
             Galleries
             </a>
-          </li>
+          </li> */}
           <li
             className={`${styles.li} ${styles.link}`}
             onClick={() => scrollToElement("footer")}

@@ -10,7 +10,7 @@ const myFont = localFont({ src: './DidotRegular.ttf' })
 
 const Footer = () => {
   return (
-    <div className={styles.footerContainer}>
+    <div className={styles.footerContainer} id='footer'>
       <p className={myFont.className}>Copyright © 2023 Planet Longhorn. All Rights Reserved.</p>
       <div className={styles.leftContainer}>
         <div className={styles.logoContainer}>
@@ -24,17 +24,17 @@ const Footer = () => {
             <Link href="#" className={myFont.className}>Home</Link>
           </li>
           <li>
+            <Link href="#" className={myFont.className}>Team</Link>
+          </li>
+          <li>
             <Link href="#" className={myFont.className}>Events</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="#" className={myFont.className}>Sports</Link>
-          </li>
-          <li>
-            <Link href="#" className={myFont.className}>People</Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link href="#" className={myFont.className}>Galleries</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="#" className={myFont.className}>Join</Link>
           </li>
