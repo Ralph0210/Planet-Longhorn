@@ -265,6 +265,9 @@ const Home = () => {
             "Come Meet People Worldwide",
             AUimage3,
             "Explore Austin with Us",
+            "Our events are designed to make you feel at ease!",
+            "We have 300+ members representing over 72 countries!",
+            "Join out social outings to learn about the city while making new friends.",
           ]);
           break;
         case "sports":
@@ -272,9 +275,12 @@ const Home = () => {
             AUimage5,
             "or just play casually",
             AUimage4,
-            "Join Our serious IM team!",
+            "Join Our competitive team!",
             AUimage6,
-            "come cheer for our games!",
+            "come cheer for our team!",
+            "It's a perfect way to have fun and connect with PL members!",
+            "We have soccer, volleyball, flag football, and more teams for you to join!",
+            "let's show our opponents the power of diversity!",
           ]);
           break;
         case "meetings":
@@ -285,6 +291,9 @@ const Home = () => {
             "Learn other cultures from our members",
             AUimage9,
             "free pizza everywhere",
+            "every week our general meeting provides free pizza!",
+            "Our members sign up to present their countries and cultures every week!",
+            "Sometimes we hold our meetings outdoors, so you can move around and talk to your future best friend!",
           ]);
           break;
         case "activities":
@@ -295,6 +304,9 @@ const Home = () => {
             "we party in the daytime",
             AUimage12,
             "we volunteer sometime",
+            "Come join us for Thirsty Thursday parties, pre-games, and the end-of-semester formal!!",
+            "come join our pool parties, boat parties, or a pinic throughout the semester!",
+            "we have a variety of volunteering events for you to make an impact in the local community!",
           ]);
           break;
         default:
@@ -399,9 +411,9 @@ const Home = () => {
           </h2>
           <p className={` ${Georgia.className} ${styles.about_us_p}`}>
             Planet Longhorn is a student-led organization at The University of
-            Texas at Austin. Our mission is clear:{" "}
+            Texas at Austin. We have members representing {" "}
             <span className={styles.importantText}>
-              create a global family that transcends borders.
+              over 72 countries!
             </span>{" "}
             <br />
             <br />
@@ -414,11 +426,11 @@ const Home = () => {
             What We Do
           </h4>
           <p className={` ${Georgia.className} ${styles.about_us_p2}`}>
-            We help international students with{" "}
+            We help international/exchange students with{" "}
             <span className={styles.importantText}>
               housing and transportation while serving as a vibrant social hub.
             </span>{" "}
-            From thrilling adventures in and around Texas to celebrating
+            From thrilling adventures in and around Austin to celebrating
             American traditions.
           </p>
           <div className={styles.slider_container_about_us}>
@@ -532,6 +544,7 @@ const Home = () => {
                   }}
                 />
                 <h2 className={styles.au_image_h2}>{textToDisplay[1]}</h2>
+                <p className={styles.au_image_p}>{textToDisplay[6]}</p>
               </motion.div>
               <motion.div
                 className={styles.au_image_2}
@@ -551,6 +564,7 @@ const Home = () => {
                   }}
                 />
                 <h2 className={styles.au_image_h2}>{textToDisplay[3]}</h2>
+                <p className={styles.au_image_p}>{textToDisplay[7]}</p>
               </motion.div>
               <motion.div
                 className={styles.au_image_3}
@@ -570,6 +584,7 @@ const Home = () => {
                   }}
                 />
                 <h2 className={styles.au_image_h2}>{textToDisplay[5]}</h2>
+                <p className={styles.au_image_p}>{textToDisplay[8]}</p>
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -579,6 +594,7 @@ const Home = () => {
           className={styles.au_image_gallery_mobile}
           ref={scrollContainerRef}
         >
+          <div className={styles.au_image_gallery_mobile_wrapper}>
           <motion.div
             variants={scroll}
             initial="hidden"
@@ -606,7 +622,7 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
                 viewport={{ amount: 0.9 }}
               >
-                {textToDisplay[3]}
+                {textToDisplay[3]}, {textToDisplay[7]}
               </motion.p>
             </div>
           </motion.div>
@@ -638,7 +654,7 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
                 viewport={{ amount: 0.9 }}
               >
-                {textToDisplay[1]}
+                {textToDisplay[1]}, {textToDisplay[6]}
               </motion.p>
             </div>
           </motion.div>
@@ -670,10 +686,11 @@ const Home = () => {
                 transition={{ duration: 0.3 }}
                 viewport={{ amount: 0.9 }}
               >
-                {textToDisplay[5]}
+                {textToDisplay[5]}, {textToDisplay[8]}
               </motion.p>
             </div>
           </motion.div>
+          </div>
         </div>
       </div>
 

@@ -289,6 +289,7 @@ margin-bottom: 1.5rem;
   margin-left: 2rem;
   gap: 3rem;
   margin-right: 2rem;
+  padding-bottom: 5rem;
 }
 
 .au_image_1{
@@ -313,6 +314,19 @@ transform: translate(-50%, -50%);
 display: none;
 }
 
+.au_image_p{
+  position: absolute;
+  color: white;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.0825rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  }
+
 .au_image_1:hover > .au_image_h2,
 .au_image_2:hover >  .au_image_h2,
 .au_image_3:hover >  .au_image_h2{
@@ -321,12 +335,29 @@ color: white;
 font-size: 7.5rem;
 font-style: normal;
 font-weight: 400;
-letter-spacing: -0.0825rem;
+/* letter-spacing: -0.0825rem; */
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 display: block;
 cursor: pointer;
+}
+
+.au_image_1:hover > .au_image_p,
+.au_image_2:hover >  .au_image_p,
+.au_image_3:hover >  .au_image_p{
+position: absolute;
+color: white;
+font-size: 2.4rem;
+font-style: normal;
+font-weight: 400;
+letter-spacing: 0rem;
+top:110%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: block;
+cursor: pointer;
+width: 35rem;
 }
 
 .au_image_2{
@@ -803,7 +834,7 @@ letter-spacing: -0.022rem;
 }
 
 .become_member_h4{
-  margin-left: -10%;
+  margin-left: 0%;
   font-size: 1.6rem;
 font-style: normal;
 font-weight: 400;
@@ -877,8 +908,12 @@ letter-spacing: -0.022rem;
 .au_image_gallery{
   width: 100%;
   background-color: black;
-  height: 80vh;
+  height: 90vh;
   display: none;
+}
+
+.au_image_gallery_mobile_wrapper{
+  display: flex;
 }
 
 .au_image_gallery_mobile{
@@ -927,15 +962,6 @@ letter-spacing: -0.022rem;
   left: 50%;
   transform: translateX(-50%);
   top: 5%;
-}
-
-.become_member_h4{
-  margin-left: -20%;
-  font-size: 3.6rem;
-font-style: normal;
-font-weight: 400;
-line-height: 150%; /* 4.8rem */
-letter-spacing: -0.0352rem;
 }
 
 .become_member_h3{
