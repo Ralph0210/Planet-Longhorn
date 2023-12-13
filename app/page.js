@@ -29,11 +29,11 @@ export default function Home() {
   useEffect(() => {
     const timer1 = setTimeout(() => {
       setShowPrivacyScreen(true);
-    }, 5000);
+    }, 4500);
 
     const timer2 = setTimeout(() => {
       router.push("/home");
-    }, 6000);
+    }, 4700);
 
     return () => clearTimeout(timer1, timer2); // Clean up the timer on unmount
   }, []);
